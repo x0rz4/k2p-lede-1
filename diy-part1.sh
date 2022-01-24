@@ -13,6 +13,12 @@
 # Uncomment a feed source
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
-# Add a feed source
-#echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
-#echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
+# 添加软件源 kenzok8/small-package
+echo 'src-git kenzok8 https://github.com/kenzok8/small-package' >>feeds.conf.default
+
+# 拉取插件 luci-app-arpbind
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-arpbind package/lean/luci-app-arpbind
+
+# 拉取 packages
+svn co https://github.com/SGPublic/k2p-lede/trunk/package package/sgpublic
+# cp -r /mnt/e/Documents/Github/k2p-lede/package package/sgpublic
